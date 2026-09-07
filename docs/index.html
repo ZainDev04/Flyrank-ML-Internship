@@ -97,7 +97,10 @@
 
 <h2 id="abstract">Abstract</h2>
 <div class="abstract">
-<p><b>Which pages should a content team treat the same way?</b> Using the FlyRank ML Internship dataset —
+<p>Content published into a client's site ranks, then decays quietly — and at inventory scale nobody
+notices until late. FlyRank's production answer is a set of hand-written flags, whose structural limit is
+that everything no threshold categorises lands in one bucket.
+<b>So: which pages should a content team treat the same way?</b> Using the FlyRank ML Internship dataset —
 a pseudonymized 30,000-row content snapshot, with the data contract validated against a 78.8-million-row
 production search warehouse — I asked what behavioural archetypes exist across a content inventory, rather
 than which individual page to fix first. K-Means (k = 6) on nine observed search and content signals
@@ -131,6 +134,36 @@ beat: a five-rung ladder keyed on volume, staleness, engagement and consistency.
 <b>43% of the entire inventory into a single catch-all bucket</b> defined by what it is not, with one
 recommendation — <code>monitor</code> — between 8,130 pages. That bucket is the tension this paper
 resolves.</p>
+
+<h3>Where this problem comes from</h3>
+
+<p>This is not a hypothetical inventory. FlyRank runs content as infrastructure: it researches and writes
+content, publishes it into a client's site, then watches search data and optimizes — the whole cycle,
+run by software rather than by people working through a list. That model has a specific failure mode.
+Content that gets found in search ranks, and then <b>decays quietly</b> — rankings slip, clicks drift
+down, and nobody notices until a quarterly report says so. At the scale FlyRank operates, noticing late
+is the default outcome, because there is no human reading 18,000 pages.</p>
+
+<p>The product's existing answer is a set of <b>hand-written flags</b> — a health score, quick-win tags,
+needs-attention markers. Thresholds picked by a person, if-this-then-that. They work, and they run in
+production today. The honest description of their limit is that a rule keyed on a handful of thresholds
+has to put everything it cannot categorise somewhere, and that somewhere gets large. The five-rung ladder
+I built as this paper's baseline is a faithful stand-in for that class of rule, and it reproduces exactly
+that behaviour: <b>43% of the inventory in one bucket</b>, holding pages whose only shared property is
+that no threshold fired on them.</p>
+
+<p><b>So the case this paper makes is narrow and concrete.</b> Splitting that catch-all into four
+measurably different populations is not an academic result — it is the difference between one policy
+applied to 8,130 pages and four policies applied to the groups that actually differ. The 735 pages the
+ladder called "steady low" that turn out to carry a median 10,620 impressions at 0.42% CTR are, in
+product terms, pages the current flags tell a team to ignore while they are the highest-exposure
+under-converters in the inventory. That is the decision this work changes.</p>
+
+<p>Two constraints come from the same source and are honoured throughout. <b>Product flags are outputs,
+never inputs</b> — a health score encodes a decision someone already made, so using it as a feature
+would produce a model that has learned the rule it is supposed to be tested against. And the claim
+language stays <i>observed / measured / directional / decision-support</i>, which is why §5 is the
+longest section here and why nothing in §6 is automated.</p>
 
 <h2 id="data">2. Data</h2>
 

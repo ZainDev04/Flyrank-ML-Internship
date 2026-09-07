@@ -1,0 +1,67 @@
+{
+  "notebook": "w07_action_playbook.ipynb",
+  "lane": "Lane 3 - Structured Content Archetype Clustering",
+  "seed": 42,
+  "sklearn": "1.8.0",
+  "inventory": {
+    "pages": 18752,
+    "clients": 29,
+    "min_impressions": 300,
+    "excluded_pages": 11248,
+    "excluded_median_impressions": 31.0
+  },
+  "archetypes_active": 5,
+  "archetypes_withdrawn": [
+    "Measured-Engagement Minority"
+  ],
+  "confidence_floor_silhouette": 0.05,
+  "low_confidence_share_pct": 13.08,
+  "action_weights": {
+    "rewrite": 1.0,
+    "improve": 0.9,
+    "monitor": 0.3,
+    "protect": 0.1
+  },
+  "action_mix": {
+    "monitor": 7153,
+    "improve": 4504,
+    "protect": 3693,
+    "rewrite": 3402
+  },
+  "reason_code_mix": {
+    "LONG_AND_UNTOUCHED": 4504,
+    "TOO_EARLY_TO_JUDGE": 4058,
+    "PERFORMING_DO_NOT_DISTURB": 3693,
+    "SETTLED_LOW_AFTER_LONG_RUN": 3402,
+    "BOUNDARY_CASE_LOW_CONFIDENCE": 1915,
+    "EXPOSURE_UNSTABLE": 643,
+    "ARCHETYPE_WITHDRAWN": 537
+  },
+  "baseline_archetype_mix_pct": {
+    "High-Yield Core": 26.3,
+    "Long-Form Untouched": 24.5,
+    "Recently Published, Establishing": 21.9,
+    "Long-Tenured Plateau": 19.2,
+    "Intermittent Exposure": 5.3,
+    "Measured-Engagement Minority (WITHDRAWN)": 2.9
+  },
+  "refresh_finding": {
+    "claim": "no measured association between recent refresh and higher visibility on this slice",
+    "full_slice_median_impression_ratio": 0.705,
+    "eligible_slice_median_impression_ratio": 1.065,
+    "n_not_refreshed_full": 553,
+    "caveat": "different population from the published paper; the paper's baseline group sits at 71 median impressions, which this playbook's visibility filter removes"
+  },
+  "never_automate": [
+    "delete/unpublish/redirect",
+    "rewrite without human reading",
+    "act on low-confidence rows",
+    "apply to an unchecked new client",
+    "publish per-page rows externally"
+  ],
+  "traces_to": [
+    "work/outputs/baseline_metrics.json",
+    "work/outputs/model_metrics.json",
+    "work/outputs/validation_metrics.json"
+  ]
+}

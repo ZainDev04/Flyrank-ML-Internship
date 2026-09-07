@@ -1,0 +1,88 @@
+{
+  "notebook": "w04_baseline_score.ipynb",
+  "lane": "Lane 3 - Structured Content Archetype Clustering",
+  "data": "data/raw/content_refresh_anonymized.csv",
+  "rule": "archetype_priority[archetype] * log1p(impressions_90d)",
+  "policy": {
+    "min_impressions": 300,
+    "champion_impressions": 3000,
+    "champion_position": 10,
+    "stale_days": 90,
+    "stale_impressions": 500,
+    "engaged_rate": 10,
+    "intermittent_days": 45,
+    "archetype_priority": {
+      "CHAMPION": 0.1,
+      "STALE_VISIBLE": 1.0,
+      "ENGAGED_NICHE": 0.5,
+      "INTERMITTENT": 0.3,
+      "STEADY_LOW": 0.6
+    }
+  },
+  "inventory_pages": 18752,
+  "inventory_clients": 29,
+  "archetype_counts": {
+    "STEADY_LOW": 8130,
+    "STALE_VISIBLE": 4891,
+    "CHAMPION": 4571,
+    "ENGAGED_NICHE": 903,
+    "INTERMITTENT": 257
+  },
+  "action_counts": {
+    "monitor": 8387,
+    "protect": 5474,
+    "improve": 4891
+  },
+  "archetype_median_profile": {
+    "STEADY_LOW": {
+      "pages": 8130,
+      "impressions": 1194.0,
+      "ctr": 0.13,
+      "position": 15.1,
+      "age_days": 223.0,
+      "since_update": 20.0,
+      "word_count": 2850.0
+    },
+    "STALE_VISIBLE": {
+      "pages": 4891,
+      "impressions": 2200.0,
+      "ctr": 0.13,
+      "position": 18.5,
+      "age_days": 238.0,
+      "since_update": 104.0,
+      "word_count": 5308.0
+    },
+    "CHAMPION": {
+      "pages": 4571,
+      "impressions": 9614.0,
+      "ctr": 0.26,
+      "position": 6.0,
+      "age_days": 236.0,
+      "since_update": 22.0,
+      "word_count": 2880.0
+    },
+    "ENGAGED_NICHE": {
+      "pages": 903,
+      "impressions": 1314.0,
+      "ctr": 0.21,
+      "position": 14.0,
+      "age_days": 228.0,
+      "since_update": 20.0,
+      "word_count": 2799.0
+    },
+    "INTERMITTENT": {
+      "pages": 257,
+      "impressions": 517.0,
+      "ctr": 0.03,
+      "position": 12.2,
+      "age_days": 175.0,
+      "since_update": 20.0,
+      "word_count": 2917.0
+    }
+  },
+  "signal_verdicts": {
+    "exposure_volume": "CONFIRMED",
+    "update_recency": "MIXED"
+  },
+  "note": "No precision@K: this lane has no label. Evidence is coherence + client spread + hand review."
+}

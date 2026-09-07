@@ -1,0 +1,112 @@
+{
+  "notebook": "w05_model.ipynb",
+  "lane": "Lane 3 - Structured Content Archetype Clustering",
+  "data": "data/raw/content_refresh_anonymized.csv",
+  "seed": 42,
+  "versions": {
+    "sklearn": "1.8.0",
+    "pandas": "3.0.2",
+    "numpy": "2.4.4"
+  },
+  "inventory": {
+    "pages": 18752,
+    "clients": 29,
+    "min_impressions": 300
+  },
+  "method": "KMeans(k=6)",
+  "k": 6,
+  "baseline_reproduced_from_ML07": {
+    "STEADY_LOW": 8130,
+    "STALE_VISIBLE": 4891,
+    "CHAMPION": 4571,
+    "ENGAGED_NICHE": 903,
+    "INTERMITTENT": 257
+  },
+  "method_comparison_silhouette": {
+    "KMeans": 0.2205,
+    "GaussianMixture": 0.1164,
+    "Agglomerative_6k_subsample": 0.1414
+  },
+  "validation": {
+    "seed_stability_ARI": 0.9981,
+    "subsample_stability_ARI": 0.9907,
+    "client_holdout_ARI_mean": 0.809,
+    "client_holdout_ARI_range": [
+      0.5891,
+      0.9326
+    ]
+  },
+  "agreement_with_ladder_ARI": 0.2881,
+  "archetypes": {
+    "0": {
+      "name": "Long-Tenured Plateau",
+      "action": "rewrite",
+      "pages": 3595,
+      "top_client_share": 0.535
+    },
+    "1": {
+      "name": "Long-Form Untouched",
+      "action": "improve",
+      "pages": 4598,
+      "top_client_share": 0.378
+    },
+    "2": {
+      "name": "High-Yield Core",
+      "action": "protect",
+      "pages": 4924,
+      "top_client_share": 0.311
+    },
+    "3": {
+      "name": "Intermittent Exposure",
+      "action": "monitor",
+      "pages": 985,
+      "top_client_share": 0.154
+    },
+    "4": {
+      "name": "Recently Published, Establishing",
+      "action": "monitor",
+      "pages": 4113,
+      "top_client_share": 0.135
+    },
+    "5": {
+      "name": "Measured-Engagement Minority",
+      "action": "protect",
+      "pages": 537,
+      "top_client_share": 0.274
+    }
+  },
+  "distinct_actions": 4,
+  "catch_all_split": {
+    "4": {
+      "pages": 3365,
+      "impressions": 1339.0,
+      "ctr": 0.15,
+      "age_days": 123.0
+    },
+    "0": {
+      "pages": 2920,
+      "impressions": 1200.0,
+      "ctr": 0.09,
+      "age_days": 445.0
+    },
+    "2": {
+      "pages": 735,
+      "impressions": 10620.0,
+      "ctr": 0.42,
+      "age_days": 147.0
+    },
+    "3": {
+      "pages": 588,
+      "impressions": 430.0,
+      "ctr": 0.0,
+      "age_days": 144.0
+    },
+    "1": {
+      "pages": 522,
+      "impressions": 399.0,
+      "ctr": 0.0,
+      "age_days": 284.0
+    }
+  },
+  "verdict": "K-Means beats GMM and Agglomerative on silhouette and splits the ladder's 8,130-page catch-all into 4+ distinct populations. But 6 clusters map to only 4 distinct actions, client-holdout ARI ranges 0.589-0.933, and PC1 is a volume axis - so the gain is real and smaller than the cluster count suggests."
+}

@@ -1,0 +1,34 @@
+{
+  "notebook": "w06_validation_audit.ipynb",
+  "lane": "Lane 3 - Structured Content Archetype Clustering",
+  "seed": 42,
+  "sklearn": "1.8.0",
+  "split_before": {
+    "test": "random 80% subsample",
+    "repeats": 10,
+    "mean_ARI": 0.9897,
+    "min_ARI": 0.981,
+    "std": 0.0043
+  },
+  "split_after": {
+    "test": "leave-one-client-out",
+    "clients": 17,
+    "mean_ARI": 0.9087,
+    "min_ARI": 0.4653,
+    "std": 0.1422,
+    "clients_below_0.80": 3
+  },
+  "leakage_audit": {
+    "precomputed_groupings_in_features": 0,
+    "PC1_variance_share": 0.3393,
+    "silhouette_with_engagement": 0.2205,
+    "silhouette_without_engagement": 0.2331,
+    "ARI_full_vs_reduced": 0.7832
+  },
+  "archetypes_withdrawn": [
+    "Measured-Engagement Minority"
+  ],
+  "actionable_archetypes": 5,
+  "low_confidence_share_pct": 10.4,
+  "verdict": "Five of six archetypes survive a feature-removal test; one is withdrawn as a feature artefact. Leave-one-client-out (17 clients) gives mean ARI 0.909 with 3 below 0.80 and a worst case of 0.465 - portability is directional, not reliable."
+}

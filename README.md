@@ -6,7 +6,7 @@ Six behavioural archetypes across a real production search inventory.
 - **Paper:** https://zaindev04.github.io/Flyrank-ML-Internship/
 - **Capstone notebook:** [`work/notebooks/capstone.ipynb`](work/notebooks/capstone.ipynb) — regenerates every number the paper quotes
 - **Receipts:** [`work/outputs/`](work/outputs/) — four JSON files the paper traces to
-- **Weekly notebooks:** [`work/notebooks/`](work/notebooks/) — eight, all executed
+- **Weekly notebooks:** [`work/notebooks/`](work/notebooks/) — eight executed, plus two starter templates I didn't use
 
 Leave-one-client-out across 17 clients: mean ARI 0.909, worst case 0.465. Directional, not established — section 5 of the paper says what this can't do.
 

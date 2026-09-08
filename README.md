@@ -1,3 +1,19 @@
+# Content Archetypes on 18,752 Pages — Shaikh Muhammad Zain
+
+Six behavioural archetypes across a real production search inventory.
+**Five survived a feature-ablation test. One didn't, so I withdrew it** and wrote down why.
+
+- **Paper:** https://zaindev04.github.io/Flyrank-ML-Internship/
+- **Capstone notebook:** [`work/notebooks/capstone.ipynb`](work/notebooks/capstone.ipynb) — regenerates every number the paper quotes
+- **Receipts:** [`work/outputs/`](work/outputs/) — four JSON files the paper traces to
+- **Weekly notebooks:** [`work/notebooks/`](work/notebooks/) — eight, all executed
+
+Leave-one-client-out across 17 clients: mean ARI 0.909, worst case 0.465. Directional, not established — section 5 of the paper says what this can't do.
+
+---
+
+*Everything below is the FlyRank starter-repo setup guide, unchanged. My work is in `work/`.*
+
 # FlyRank ML Internship — Starter Repo
 
 **Applied Search Intelligence: Google Search Ranking & Discoverability**

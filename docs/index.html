@@ -105,7 +105,7 @@ a pseudonymized 30,000-row content snapshot, with the data contract validated ag
 production search warehouse — I asked what behavioural archetypes exist across a content inventory, rather
 than which individual page to fix first. K-Means (k = 6) on nine observed search and content signals
 produced six groups that reproduce almost perfectly across random seeds (ARI 0.998) and split a
-hand-written rule's 8,130-page catch-all bucket into four measurably different populations, including 735
+hand-written rule's 8,130-page catch-all bucket into five measurably different populations, including 735
 pages the rule labelled "steady low" that carry a median 10,620 impressions at 0.42% CTR.
 <b>Five of those six archetypes survived a robustness test; the sixth did not, and is withdrawn here.</b>
 Under leave-one-client-out across 17 clients the partition transferred with mean ARI 0.909 but a worst
@@ -152,12 +152,12 @@ I built as this paper's baseline is a faithful stand-in for that class of rule, 
 that behaviour: <b>43% of the inventory in one bucket</b>, holding pages whose only shared property is
 that no threshold fired on them.</p>
 
-<p><b>So the case this paper makes is narrow and concrete.</b> Splitting that catch-all into four
+<p><b>So the case this paper makes is narrow and concrete.</b> Splitting that catch-all into five
 measurably different populations is not an academic result — it is the difference between one policy
-applied to 8,130 pages and four policies applied to the groups that actually differ. The 735 pages the
+applied to 8,130 pages and five policies applied to the groups that actually differ. The 735 pages the
 ladder called "steady low" that turn out to carry a median 10,620 impressions at 0.42% CTR are, in
 product terms, pages the current flags tell a team to ignore while they are the highest-exposure
-under-converters in the inventory. That is the decision this work changes.</p>
+pages in the bucket the rule told teams to ignore. That is the decision this work changes.</p>
 
 <p>Two constraints come from the same source and are honoured throughout. <b>Product flags are outputs,
 never inputs</b> — a health score encodes a decision someone already made, so using it as a feature

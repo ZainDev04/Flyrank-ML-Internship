@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +14,7 @@
 <meta property="og:image" content="https://zaindev04.github.io/Flyrank-ML-Internship/img/fig1_archetypes_vs_ladder.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23d2eefc'/%3E%3Ccircle cx='32' cy='32' r='11' fill='%230e202a'/%3E%3C/svg%3E">
+<script>document.documentElement.className="js";</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap">
@@ -217,7 +218,28 @@ footer.end .card p:last-child{margin:0}
 footer.end .links{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:1.6rem;font-size:.86rem}
 footer.end .links a{color:var(--ink-2)}
 
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+/* motion: one entrance for the hero, a quiet rise for each section on scroll */
+.js .hero .kicker,.js .hero h1,.js .hero .sub,.js .hero .byline,.js .stat{
+  opacity:0;transform:translateY(16px);
+  animation:rise .8s cubic-bezier(.16,1,.3,1) forwards;
+}
+.js .hero .kicker{animation-delay:.05s}
+.js .hero h1{animation-delay:.14s}
+.js .hero .sub{animation-delay:.26s}
+.js .hero .byline{animation-delay:.36s}
+.js .stat:nth-child(1){animation-delay:.32s}
+.js .stat:nth-child(2){animation-delay:.42s}
+.js .stat:nth-child(3){animation-delay:.52s}
+.js .stat:nth-child(4){animation-delay:.62s}
+@keyframes rise{to{opacity:1;transform:none}}
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+.js .rv.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .js .hero .kicker,.js .hero h1,.js .hero .sub,.js .hero .byline,.js .stat,.js .rv{opacity:1;transform:none}
+}
 @media print{
   header.top,.index,.skip{display:none}
   body{font-size:11pt;color:#222}
@@ -269,7 +291,7 @@ footer.end .links a{color:var(--ink-2)}
 
 <div class="shell paper">
 
-  <nav class="index" aria-label="Sections">
+  <nav class="index rv" aria-label="Sections">
     <p class="kicker">In this paper</p>
     <ol>
       <li><a href="#abstract">Abstract</a></li>
@@ -287,7 +309,7 @@ footer.end .links a{color:var(--ink-2)}
 
   <article>
 
-  <section id="abstract-s">
+  <section id="abstract-s" class="rv">
     <h2 id="abstract">Abstract</h2>
     <div class="abstract">
     <p>Content published into a client's site ranks, then decays quietly, and at inventory scale nobody
@@ -307,7 +329,7 @@ footer.end .links a{color:var(--ink-2)}
     </div>
   </section>
 
-  <section>
+  <section class="rv">
     <h2 id="intro">1. Introduction: the decision this supports</h2>
 
     <p>A content lead with 18,000 pages does not make 18,000 decisions. At twenty reviewed pages a week, one
@@ -354,7 +376,7 @@ footer.end .links a{color:var(--ink-2)}
     longest section here and why nothing in section 6 is automated.</p>
   </section>
 
-  <section>
+  <section class="rv">
     <h2 id="data">2. Data</h2>
 
     <p><b>Source.</b> The FlyRank ML Internship dataset. Two releases were used, for different purposes:</p>
@@ -400,7 +422,7 @@ footer.end .links a{color:var(--ink-2)}
     or appears anywhere in this paper. All figures are aggregates.</p>
   </section>
 
-  <section>
+  <section class="rv">
     <h2 id="method">3. Methodology</h2>
 
     <h3>Task type</h3>
@@ -451,7 +473,7 @@ content age        days since last update</pre>
     </div>
   </section>
 
-  <section>
+  <section class="rv">
     <h2 id="results">4. Results</h2>
 
     <h3>Method choice: the simplest option won</h3>
@@ -520,7 +542,7 @@ content age        days since last update</pre>
     </div>
   </section>
 
-  <section>
+  <section class="rv">
     <h2 id="limits">5. Limitations and honest framing</h2>
 
     <p><b>What this study can say:</b> that six behavioural groups reproduce across seeds on this slice, that
@@ -568,7 +590,7 @@ content age        days since last update</pre>
     </div>
   </section>
 
-  <section>
+  <section class="rv">
     <h2 id="recs">6. Ranked recommendations</h2>
 
     <p>The deliverable is a ranked review queue: one row per page, one reason code, one suggested action, and
@@ -630,7 +652,7 @@ content age        days since last update</pre>
     ageing past 30 days; and GA4 coverage improving enough to re-test the withdrawn archetype.</p>
   </section>
 
-  <section>
+  <section class="rv">
     <h2 id="repro">7. Reproducibility</h2>
 
     <p>Every number on this page was produced by an executed notebook committed to the repository, and traces
@@ -654,7 +676,7 @@ content age        days since last update</pre>
     data drifts, the notebook fails loudly rather than reporting a quietly different result.</p>
   </section>
 
-  <section>
+  <section class="rv">
     <h2 id="ack">8. Acknowledgments and data credit</h2>
 
     <p>Built on the <b>FlyRank ML Internship dataset</b> (<a href="https://flyrank.ai">flyrank.ai</a>).
@@ -705,6 +727,27 @@ content age        days since last update</pre>
     if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
   }, { passive: true });
   onScroll();
+
+  // Scroll reveal. Anything already on screen shows at once; nothing may
+  // stay hidden if an observer callback never fires.
+  var RM = window.matchMedia('(prefers-reduced-motion:reduce)');
+  var rv = Array.prototype.slice.call(document.querySelectorAll('.rv'));
+  if (!('IntersectionObserver' in window) || RM.matches) {
+    rv.forEach(function (el) { el.classList.add('in'); });
+  } else {
+    var rio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('in'); rio.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.02 });
+    rv.forEach(function (el) { rio.observe(el); });
+    setTimeout(function () {
+      rv.forEach(function (el) {
+        if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in');
+      });
+    }, 2500);
+  }
 
   // Section index: mark the section currently in view. Sections are tall
   // targets, so the observer band always overlaps exactly one of them.

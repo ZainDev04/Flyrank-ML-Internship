@@ -1,4 +1,4 @@
-# work/ — your space
+# work/ is your space
 
 Everything you build lives here: lane experiments, notebooks, figures, and your capstone
 report. The rest of the repo is the shared reference; this folder is yours.
@@ -7,17 +7,17 @@ report. The rest of the repo is the shared reference; this folder is yours.
 
 1. **Copy, don't edit.** Need to change the pipeline? Copy the script here
    (e.g. `work/scripts/03_train_model_v2.py`) or adjust the feature lists in
-   `scripts/ml_utils.py`. The reference pipeline in `scripts/` stays pristine — it's the
+   `scripts/ml_utils.py`. The reference pipeline in `scripts/` stays pristine. It's the
    baseline you compare against, and reviewers expect to find it unchanged.
 2. **No datasets in git.** CSVs inside `work/` are gitignored, and CI fails if any dataset
    CSV is committed anywhere in the repo. Small summary tables belong in your report as
    markdown, not as data files. Metrics JSONs are the opposite: keep files like
-   `work/outputs/*.json` **committed** — they are the receipts your report's numbers trace
+   `work/outputs/*.json` **committed**. They are the receipts your report's numbers trace
    back to. Don't add ignore rules that hide them.
 3. **Stay reproducible.** Fix your random seeds and note them in your report. Someone with a
    fresh clone should be able to re-run your work from your instructions alone.
 4. **Public-safety language.** Everything here may end up public with your submission:
-   observed / measured / directional / decision-support — no client-identifying details,
+   observed / measured / directional / decision-support, no client-identifying details,
    no causal claims without a design (see `DATA_USE.md`).
 
 ## Suggested layout
@@ -32,12 +32,12 @@ work/
 
 ## Capstone
 
-Copy `capstone_report_template.md` to `capstone_report.md` and fill it in as you go — it
+Copy `capstone_report_template.md` to `capstone_report.md` and fill it in as you go. It
 mirrors the eight axes your work is graded on, so writing it early keeps you honest.
 
 ## Your assignment index
 
-Your skeleton notebooks are already in `notebooks/` — one per assignment, pre-named.
+Your skeleton notebooks are already in `notebooks/`, one per assignment, pre-named.
 Tick them off as you go; this table is the map of your work (each badge opens the notebook
 in Colab, straight from your repo):
 
@@ -51,8 +51,8 @@ in Colab, straight from your repo):
 | `notebooks/w06_validation_audit.ipynb` | ML-09 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ZainDev04/Flyrank-ML-Internship/blob/main/work/notebooks/w06_validation_audit.ipynb?flush_cache=true) | ☐ |
 | `notebooks/w07_action_playbook.ipynb` | ML-10 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ZainDev04/Flyrank-ML-Internship/blob/main/work/notebooks/w07_action_playbook.ipynb?flush_cache=true) | ☐ |
 | `notebooks/capstone.ipynb` | ML-11 (the paper mirrors it) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ZainDev04/Flyrank-ML-Internship/blob/main/work/notebooks/capstone.ipynb?flush_cache=true) | ☐ |
-| closing section of `notebooks/capstone.ipynb` | ML-12 — 5-min demo outline + social-post cut + employer-facing summary | (same notebook, last markdown cells) | ☐ |
+| closing section of `notebooks/capstone.ipynb` | ML-12: 5-min demo outline, social-post cut, employer-facing summary | (same notebook, last markdown cells) | ☐ |
 
 When your paper is deployed, put its exact URL in `../submission/paper_url.txt` (one line).
-ML-12 lives in your capstone notebook's closing markdown cells — it's the smallest card and
+ML-12 lives in your capstone notebook's closing markdown cells. It's the smallest card and
 the easiest to forget, which is exactly why it has a row here.

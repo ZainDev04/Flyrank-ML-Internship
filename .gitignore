@@ -34,3 +34,7 @@ __pycache__/
 .venv/
 venv/
 .env
+
+# AI assistant instruction files (kept locally)
+CLAUDE.md
+AGENTS.md

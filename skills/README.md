@@ -4,8 +4,8 @@ This folder is a small library of **skills**: focused instruction files your AI 
 one at a time. One skill per task keeps the assistant sharp — its context window is small, and
 filling it with everything makes it worse at the one thing you need.
 
-**How to use it (repo-reading agents — Claude Code, Cursor, Codex):** they find this file
-automatically via `AGENTS.md` / `CLAUDE.md`. Just tell your assistant which task you're doing.
+**How to use it (repo-reading agents: Claude Code, Cursor, Codex):** tell your assistant to read
+this file first, then say which task you're doing.
 
 **Using a chat-only assistant (ChatGPT / Gemini in a browser)?** Open the skill file on GitHub,
 copy its whole content, and paste it into your chat before asking for help. That's it.

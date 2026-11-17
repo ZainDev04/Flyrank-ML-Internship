@@ -124,8 +124,7 @@ ChatGPT — any of them). Start every task by telling your assistant:
 The router in `skills/README.md` maps every task to its skill. Load one skill at a time — never
 all of them (your assistant's memory is small, and stuffing it makes it worse, not better).
 Using a chat-only assistant in the browser? Open the skill file on GitHub and paste its content
-into your chat first. Repo-reading agents find the router automatically through `AGENTS.md` and
-`CLAUDE.md` at the repo root.
+into your chat first.
 
 ## 7. FAQ — the questions everyone asks
 
